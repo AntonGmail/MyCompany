@@ -1,0 +1,9 @@
+.table1 {
+width: 75%;
+}
+th {
+    text-align: center;
+}
+th, td {
+    padding: 5px 10px;
+}

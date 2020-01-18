@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Департаменты
+    Департамент - {{ $dep->dep_name }}
 @endsection
 
 @section('content')
@@ -20,17 +20,17 @@
                         </div>
                     @endif
 
-                    <h5> Список департаментов ...</h5>
+                    <h5> Список должностей ...</h5>
                     <table class="table1" border="1">
                         <tr>
-                        <th> Dep_Id</th>
-                        <th> Dep_Name</th>
-                        <th>Dep_Menage</th>
+                        <th> Pos_Id</th>
+                        <th> Pos_Name</th>
+                        <th>Pos_Menage</th>
                         </tr>
-                        @foreach ($deps as $dep)
+                        @foreach ($poss as $pos)
                             <tr>
-                                <td>{{ $dep->id }}</td>
-                                <td>{{ $dep->dep_name }}</td>
+                                <td>{{ $pos->id }}</td>
+                                <td>{{ $pos->pos_name }}</td>
                                 <td class="1">
                                     | 
                                     <a href="{{ url('departments/'.$dep->id) }}">Details</a>
@@ -43,6 +43,8 @@
                             </tr>
                         @endforeach
                     </table>
+                    <br>
+                    <a href="{{ url('departments') }}"> Look back </a>
                 </div>
             </div>
         </div>
