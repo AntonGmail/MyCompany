@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Управление Департаментами</h4>
+                    <h4>Название департамента</h4>
                 </div>
 
                 <div class="card-body">
@@ -44,6 +44,41 @@
                         @endforeach
                     </table>
                     <br>
+
+                    <h5>Список сотрудников</h5>
+                    <table id="table11">
+                    <br>
+                    <tr>
+                        <th> Emp_Id</th>
+                        <th> Emp_Name</th>
+                        <th> Birth_Day</th>
+                        <th> Gender</th>
+                        <th> Pos_Name</th>
+                        <th> Salary</th>
+                        <th> Emp_Management</th>
+                    </tr>
+                    @foreach($emps as $emp)
+                    <tr>
+                        <td class="centet">{{ $emp['person']->id  }}</td>
+                        <td>{{ $emp['person']->emp_name }}</td>
+                        <td class="centet">{{ $emp['person']->birth_day }}</td>
+                        <td class="centet">{{ $emp['person']->gender }}</td>
+                        <td class="centet">{{ $emp['pos_name'] }}</td>
+                        <td class="centet">{{ $emp['person']->salary  }}</td>
+                        <td class="center">
+                        | 
+                        <a href="{{ url('departments/'.$dep->id) }}">Details</a>
+                        |
+                        <a href="">Edit</a>
+                        |
+                        <a href="">Delete</a>
+                        |</td>
+                    </tr>
+
+                    @endforeach                   
+                    </table>
+
+
                     <a href="{{ url('departments') }}"> Look back </a>
                 </div>
             </div>
